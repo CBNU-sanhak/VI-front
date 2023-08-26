@@ -1,0 +1,38 @@
+.boardCard {
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    color: red;
+    border: solid 1px black;
+    border-radius: 3px;
+    margin-bottom: 16px;
+    width: 90%;
+    height: 300px;
+}
+
+.title {
+    color: gray;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    border-bottom: solid 2px gray;
+    padding-bottom: 4px;
+}
+
+.content {
+    font-size: 14px;
+    color: black;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid  #a6a6a6;;
+}
+
+.content > div{
+    display: flex;
+    justify-content: end;
+    color: #a6a6a6;
+    opacity: 1;
+}

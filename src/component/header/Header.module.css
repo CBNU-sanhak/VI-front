@@ -1,0 +1,50 @@
+
+
+
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px black;
+}
+.icon {
+    flex: 1;
+    margin:30px;
+}
+.mainmenu{
+
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    padding:20px;
+    font-weight: bolder;
+    border-radius: 0.5rem;
+    &:hover .dropDownNavBar{
+        display: block;
+    }
+    
+}
+.item:hover {
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    position: relative;
+    
+}
+
+.item:hover >a {
+    color: white;
+}
+
+.usermenu {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+}
+
+.usermenu div {
+    margin:10px;
+}

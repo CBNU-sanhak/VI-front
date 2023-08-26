@@ -1,0 +1,75 @@
+.container {
+    width: 90%;
+   
+    
+}
+
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0px;
+}
+.content {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+}
+.myProfile{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-right: 1px solid rgba(0,0,0,0.3); 
+
+    
+}
+
+.myProfile img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    margin: 16px 16px;
+}
+.myProfile > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.myProfile  h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.myProfile  p {
+    opacity: 70%;
+}
+.myProfile  button {
+    opacity: 70%;
+}
+
+
+.myActives {
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    width: 70%;
+}
+
+.myActive {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 15px;
+    padding: 15px
+}
+
+.myActive h3 {
+    font-size: 20px;
+    font-weight: bold;
+
+}
