@@ -1,0 +1,30 @@
+.container {
+    width: 90%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header {
+    display: flex;
+    border-bottom: solid 1px gray;
+    padding-bottom: 5px;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.subject {
+    font-size: 22px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    
+}
+
+
+.content {
+    
+    border-bottom: solid 0.5px gray;
+}
