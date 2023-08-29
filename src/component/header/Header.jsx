@@ -28,6 +28,9 @@ export default function Header() {
                 <div className={styles.item}>
                     <Link to='board'>커뮤니티</Link>
                 </div>
+                <div className={styles.item}>
+                    <Link to='help'>고객센터</Link>
+                </div>
                 {
                     isLogin?
                     <div className={styles.item}>

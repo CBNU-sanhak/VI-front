@@ -1,6 +1,7 @@
 import React from 'react';
 import BoardCard from '../component/Board/BoardCard';
 import styles from './BoardPage.module.css'
+import { Link, Navigate } from 'react-router-dom';
 export default function BoardFreePage({pagename}) {
 
     const data = [
@@ -19,7 +20,7 @@ export default function BoardFreePage({pagename}) {
                     <input className={styles.input}></input>
                     <img className={styles.searchIcon}src="/img/searchIcon.png"></img>
                 </div>
-                <button className={styles.button}> 글작성 </button>
+                <Link to={'/board/write'} ><button className={styles.button}> 글작성</button> </Link>
             </div>
             
         </div>

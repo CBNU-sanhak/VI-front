@@ -1,0 +1,66 @@
+/* CustomerServicePage.module.css */
+.container {
+    /* max-width: 800px;
+    margin: 0 auto;
+    padding: 20px; */
+    width: 90%;
+  }
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0px;
+}
+.faqsection {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+  
+  .sectionTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .question {
+    font-weight: bold;
+  }
+  
+  .formContainer {
+      width: 100%;
+      border-radius: 1rem;
+      margin-top: 20px;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid black;
+  }
+  
+  .formLabel {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .formInput {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .formTextArea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .content {
+    margin-left: 1rem;
+  }
+  

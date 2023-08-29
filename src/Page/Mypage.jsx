@@ -44,6 +44,10 @@ export default function Mypage() {
                         <h3>내가 쓴 댓글 </h3>
                         {info.myStudygroup.map((item)=> <span>{item}</span>)} 
                     </div>  
+                    <div  className={styles.myActive}>
+                        <h3>문의 내역 </h3>
+                        {info.myStudygroup.map((item)=> <span>{item}</span>)} 
+                    </div>  
                 </div>
                         
             </div>

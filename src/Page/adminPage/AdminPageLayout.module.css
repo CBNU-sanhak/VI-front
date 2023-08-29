@@ -1,0 +1,30 @@
+.sideBar {
+    flex: 1.5;
+}
+
+.main {
+    flex: 8;
+}
+
+
+
+.list {
+    /* 기본 사이드바 항목 스타일 */
+    /* ... */
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    height: 40px;
+    align-items: center;
+    border-radius: 1rem;
+    
+    transition: background-color 0.3s, color 0.3s;
+
+
+}
+
+.selected,
+.list:hover {
+    color: white;
+    background-color: #E1E1E1;
+}

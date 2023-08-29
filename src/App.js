@@ -14,6 +14,13 @@ import Signup from './Page/Signup';
 import Mypage from './Page/Mypage';
 import InterviewResult from './Page/InterviewResult';
 import { LoginModeProvider } from './context/LoginModeContext';
+import Help from './Page/help';
+import AdminPageLayout from './Page/adminPage/AdminPageLayout';
+import AdminMainPage from './Page/adminPage/AdminMainPage';
+import AdminCustomerService from './Page/adminPage/AdminCustomerService';
+import AdminBoard from './Page/adminPage/AdminBoard';
+import AdminStudygroup from './Page/adminPage/AdminStudygroup';
+import AdminInterview from './Page/adminPage/AdminInterview';
 
 
 const router = createBrowserRouter([
@@ -52,6 +59,11 @@ const router = createBrowserRouter([
           errorElement: <ErrorPage />,
         },
         {
+          path: "/help",
+          element: <Help />,
+          errorElement: <ErrorPage />,
+        },
+        {
           path: "/interview/result/:interviewId",
           element: <InterviewResult />,
           errorElement: <ErrorPage />,
@@ -69,6 +81,26 @@ const router = createBrowserRouter([
     element: <Signup />,
     errorElement: <ErrorPage />,
   },
+  {
+    path: "/admin",
+      element: <AdminPageLayout />,
+      errorElement: <ErrorPage />,
+      children:[
+        { index:true,element:<AdminMainPage/>},
+        { path: "customer-service",
+          element: <AdminCustomerService />
+        },
+        { path: "board",
+          element: <AdminBoard />
+        },
+        { path: "studygroup",
+          element: <AdminStudygroup />
+        },
+        { path: "interview",
+          element: <AdminInterview />
+        },
+      ]
+  }
   
 ]);
 
