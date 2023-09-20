@@ -1,52 +1,86 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './BoardList.module.css'
+//커뮤니티페이지의 게시판들의 미리보기를 위한 컴포넌트
+// 추천 api, 미리보기를 위한 api가 필요 8개 최신순 
+//
 
 export default function BoardList() {
 
-    const content  = [
+    const content  = [     
+
         {
-        제목: "ㅑㅑㅑㅑㅑ",
-        id:1,
-        date:231212,
-        추천:'3'
+            id:'5',
+            title:'오늘 매우 더움',
+            writer:'cys9813',
+            content:"blblblblblblbl",
+            category:'1',
+            recommend:'3',
+            p_date:'20231212'
         },
         {
-            제목: "브라블라",
-            id:3,
-            date:231212,
-            추천:'3'
-         },
-         {
-            제목: "더워",
-            id:2,
-            date:231212,
-            추천:'3'
-        },      
-        {
-            제목: "더워",
-            id:4,
-            date:231212,
-            추천:'3'
-        },   
-        {
-            제목: "더워",
-            id:5,
-            date:231212,
-            추천:'3'
+            id:'13',
+            title:'오늘 매우 더움',
+            writer:'cys9813',
+            content:"blblblblblblbl",
+            category:'1',
+            recommend:'3',
+            p_date:'20231212'
         },
         {
-            제목: "더워",
-            id:5,
-            date:231212,
-            추천:'3'
-        },   
+            id:'13',
+            title:'오늘 매우 더움',
+            writer:'cys9813',
+            content:"blblblblblblbl",
+            category:'1',
+            recommend:'3',
+            p_date:'20231212'
+        },
         {
-            제목: "더워",
-            id:5,
-            date:231212,
-            추천:'3'
-        },       
+            id:'11',
+            title:'오늘 매우 더움',
+            writer:'cys9813',
+            content:"blblblblblblbl",
+            category:'1',
+            recommend:'3',
+            p_date:'20231212'
+        },
+        {
+            id:'6',
+            title:'오늘 매우 더움',
+            writer:'cys9813',
+            content:"blblblblblblbl",
+            category:'1',
+            recommend:'3',
+            p_date:'20231212'
+        },
+        {
+            id:'7',
+            title:'오늘 매우 더움',
+            writer:'cys9813',
+            content:"blblblblblblbl",
+            category:'1',
+            recommend:'3',
+            p_date:'20231212'
+        },
+        {
+            id:'8',
+            title:'오늘 매우 더움',
+            writer:'cys9813',
+            content:"blblblblblblbl",
+            category:'1',
+            recommend:'3',
+            p_date:'20231212'
+        }, 
+        {
+            id:'9',
+            title:'오늘 매우 더움',
+            writer:'cys9813',
+            content:"blblblblblblbl",
+            category:'1',
+            recommend:'3',
+            p_date:'20231212'
+        },     
     ]
         
     return (
@@ -57,10 +91,10 @@ export default function BoardList() {
                     <div>
                         {content.map((item) => 
                             (<div className={styles.content}>
-                                <a id={item.id}href={`/board/${item.id}`}>
-                                    {item.제목} 
+                                <a id={item.id}href={`/board/free/${item.id}`}>
+                                    {item.title} 
                                 </a>
-                                <div>날짜:{item.date} 추천:{item.추천}</div>
+                                <div>날짜:{item.p_date} 추천:{item.recommend}</div>
                             </div>)
                         )}
                     </div>
@@ -71,10 +105,10 @@ export default function BoardList() {
                     <div>
                         {content.map((item) => 
                             (<div className={styles.content}>
-                                <a id={item.id}href={`/board/${item.id}`}>
-                                    {item.제목} 
+                                <a id={item.id}href={`/board/interview/${item.id}`}>
+                                    {item.title} 
                                 </a>
-                                <div>날짜:{item.date} 추천:{item.추천}</div>
+                                <div>날짜:{item.p_date} 추천:{item.recommend}</div>
                             </div>)
                         )}
                     </div>
@@ -84,10 +118,10 @@ export default function BoardList() {
                     <div>
                         {content.map((item) => 
                             (<div className={styles.content}>
-                                <a id={item.id}href={`/boards/${item.id}`}>
-                                    {item.제목} 
+                                <a id={item.id}href={`/board/free/${item.id}`}>
+                                    {item.title} 
                                 </a>
-                                <div>날짜:{item.date} 추천:{item.추천}</div>
+                                <div>날짜:{item.p_date} 추천:{item.recommend}</div>
                             </div>)
                         )}
                     </div>

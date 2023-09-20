@@ -21,6 +21,7 @@
 }
 
 .content {
+    height: 20px;
     font-size: 14px;
     color: black;
     padding: 5px;

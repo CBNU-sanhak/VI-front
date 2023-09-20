@@ -10,3 +10,25 @@
     width: 90%;
     height: 300px;
 }
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pagination li {
+    margin: 0 5px;
+  }
+  
+  .pagination a {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .pagination .active a {
+    background-color: #555;
+  }

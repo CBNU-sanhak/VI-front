@@ -4,49 +4,43 @@ import { Link } from 'react-router-dom';
 
 export default function BoardCard() {
 
-    const content  = [
+    const content  = [     
         {
-        제목: "ㅑㅑㅑㅑㅑ",
-        id:1,
-        date:231212,
-        추천:'3'
+            id:'2',
+            title:'오늘 매우 더움',
+            writer:'cys9813',
+            content:"blblblblblblbl",
+            category:'1',
+            추천:'3',
+            p_date:'20231212'
         },
         {
-            제목: "브라블라",
-            id:3,
-            date:231212,
-            추천:'3'
-         },
-         {
-            제목: "더워",
-            id:2,
-            date:231212,
-            추천:'3'
-        },      
+            id:'3',
+            title:'오늘 매우 더움',
+            writer:'cys9813',
+            content:"blblblblblblbl",
+            category:'1',
+            추천:'3',
+            p_date:'20231212'
+        }, 
         {
-            제목: "더워",
-            id:4,
-            date:231212,
-            추천:'3'
-        },   
+            id:'4',
+            title:'오늘 매우 더움',
+            writer:'cys9813',
+            content:"blblblblblblbl",
+            category:'1',
+            추천:'3',
+            p_date:'20231212'
+        }, 
         {
-            제목: "더워",
-            id:5,
-            date:231212,
-            추천:'3'
-        },
-        {
-            제목: "더워",
-            id:5,
-            date:231212,
-            추천:'3'
-        },   
-        {
-            제목: "더워",
-            id:5,
-            date:231212,
-            추천:'3'
-        },       
+            id:'5',
+            title:'오늘 매우 더움',
+            writer:'cys9813',
+            content:"blblblblblblbl",
+            category:'1',
+            추천:'3',
+            p_date:'20231212'
+        },     
     ]
     return (
             <div className={styles.boardCard}>
@@ -55,8 +49,9 @@ export default function BoardCard() {
             <div>
                 {content.map((item) => 
                     (<div className={styles.content}>
+                        <span>{item.writer}</span>
                         <a id={item.id}href={`/board/${item.id}`}>
-                            {item.제목} 
+                            {item.title} 
                         </a>
                         <div>날짜:{item.date} 추천:{item.추천}</div>
                     </div>)

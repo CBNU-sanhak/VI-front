@@ -21,6 +21,8 @@ import AdminCustomerService from './Page/adminPage/AdminCustomerService';
 import AdminBoard from './Page/adminPage/AdminBoard';
 import AdminStudygroup from './Page/adminPage/AdminStudygroup';
 import AdminInterview from './Page/adminPage/AdminInterview';
+import Interview from './Page/Interview';
+import StudyGroup from './Page/StudyGroup';
 
 
 const router = createBrowserRouter([
@@ -34,8 +36,10 @@ const router = createBrowserRouter([
           element: <WriteBoardPage />
         },
         {
-          path: "/board/free",
-          element: <BoardFreePage />
+          path: "/interview",
+          element: <Interview />,
+          errorElement: <ErrorPage />,
+      
         },
         {
           path: "/board/:boardId",
@@ -50,7 +54,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/board/free",
-          element: <BoardFreePage />,
+          element: <BoardFreePage boardName="free" />,
           errorElement: <ErrorPage />,
         },
         {
@@ -66,6 +70,16 @@ const router = createBrowserRouter([
         {
           path: "/interview/result/:interviewId",
           element: <InterviewResult />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/interview",
+          element: <Interview />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/studygroup",
+          element: <StudyGroup />,
           errorElement: <ErrorPage />,
         },
       ]

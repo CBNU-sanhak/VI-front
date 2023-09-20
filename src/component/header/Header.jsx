@@ -15,22 +15,30 @@ export default function Header() {
 
     return (
         <div className={styles.header}>
-            <div className={styles.icon}>
+            <div className={styles.icon} >
                 <Link to='/'>LOGO</Link>
             </div>
             <div className={styles.mainmenu}>
-                <div className={styles.item}>
-                    <Link to='board'>가상면접</Link>
-                </div>
-                <div className={styles.item}>
-                    <Link to='board'>스터디그룹</Link>
-                </div>
-                <div className={styles.item}>
-                    <Link to='board'>커뮤니티</Link>
-                </div>
-                <div className={styles.item}>
-                    <Link to='help'>고객센터</Link>
-                </div>
+                <Link to='interview'>
+                    <div className={styles.item}>
+                        가상면접
+                    </div>
+                </Link>
+                <Link to='studygroup'>
+                    <div className={styles.item}>
+                        스터디그룹
+                    </div>
+                </Link>
+                <Link to='board'>
+                    <div className={styles.item}>
+                        커뮤니티
+                    </div>
+                </Link>
+                <Link to='help'>
+                    <div className={styles.item}>
+                        고객센터
+                    </div>
+                </Link>
                 {
                     isLogin?
                     <div className={styles.item}>
@@ -47,12 +55,16 @@ export default function Header() {
                         <button onClick={handleLogout}>로그아웃</button>
                     </div>:
                     <div className={styles.usermenu}>
-                        <div className={styles.item}>
-                            <Link to='login'>로그인</Link>                    
-                        </div>
-                        <div className={styles.item}>
-                            <Link to='signup'>회원가입</Link>                    
-                        </div>
+                        <Link to='login'>
+                            <div className={styles.item}>
+                                로그인
+                            </div>
+                        </Link>
+                        <Link to='signup'>
+                            <div className={styles.item}>
+                                회원가입
+                            </div>
+                        </Link>
                     </div>
                     
                 }

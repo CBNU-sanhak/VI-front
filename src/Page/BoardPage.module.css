@@ -3,10 +3,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
 
 }
 
+.content {
+  width: 90%;
+}
+
+
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px 0px;
+}
+
+
+.content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content li {
+  margin: 10px 0;
+}
 .bottom {
     display: flex;
     width: 90%;
@@ -56,4 +76,53 @@
         background-color: black;
         border-color: black;
 
+  }
+  .boardCard {
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    color: red;
+    border: solid 1px black;
+    border-radius: 3px;
+    margin-bottom: 16px;
+    width: 90%;
+    height: 300px;
+}
+
+.pagination {
+
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+    padding: 0;
+  }
+  
+  .pagination li {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pagination li.active {
+    background-color: #007bff;
+    color: #fff;
+    
+  }
+ 
+
+  .postlink {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    display: block; /* 블록 요소로 변경 */
+    border: 1px solid #ccc; /* 테두리 스타일 및 색상 설정 */
+    padding: 10px; /* 내부 여백 추가 */
+    margin-bottom: -1px; /* 아래쪽 마진 추가 (필요에 따라 조절) */
+    box-sizing: border-box;
+  }
+  
+  .postlink:hover {
+    background-color: #f0f0f0; /* 호버 시 배경색 변경 (선택 사항) */
   }
