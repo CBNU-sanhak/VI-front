@@ -23,6 +23,8 @@ import AdminStudygroup from './Page/adminPage/AdminStudygroup';
 import AdminInterview from './Page/adminPage/AdminInterview';
 import Interview from './Page/Interview';
 import StudyGroup from './Page/StudyGroup';
+import QAPage from './Page/QAPage';
+import SearchResults from './Page/SearchResultPage';
 
 
 const router = createBrowserRouter([
@@ -58,8 +60,28 @@ const router = createBrowserRouter([
           errorElement: <ErrorPage />,
         },
         {
+          path: "/board/interview",
+          element: <BoardFreePage boardName="interview" />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/board/job",
+          element: <BoardFreePage boardName="job" />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/search",
+          element: <SearchResults />,
+          errorElement: <ErrorPage />,
+        },
+        {
           path: "/mypage",
           element: <Mypage />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/qa/:id",
+          element: <QAPage />,
           errorElement: <ErrorPage />,
         },
         {

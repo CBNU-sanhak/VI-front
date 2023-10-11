@@ -1,14 +1,10 @@
 import React, { useContext } from 'react';
-import { LoginModeContext } from '../context/LoginModeContext';
+
 import styles from './Home.module.css'
 import { Link } from 'react-router-dom';
 export default function Home() {
-    const {login} = useContext(LoginModeContext);
-    const handleSession = () => {
-        localStorage.setItem('id',"cys9813");
-        localStorage.setItem('token',12345);
-        login();
-    }
+    
+    
     return (
         <div className={styles.maincontent}>
             {/* <button onClick={handleSession}>로그인(local실험)</button> */}

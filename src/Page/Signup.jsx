@@ -111,12 +111,6 @@ export default function Signup() {
             }
         }
     }
-
-    function generate(min, max) {
-        let randNum = Math.floor(Math.random() * (max - min + 1)) + min;
-        return randNum;
-    }
-
     function handleEmailCheck() {
         if(!isValue) {
             alert("올바른 이메일을 입력해 주세요");
@@ -152,7 +146,7 @@ export default function Signup() {
             console.log(vnum);
             alert("인증메일을 전송해주세요")
         } else{
-            if(vnum == vnum2) {
+            if(vnum === vnum2) {
                 alert ("인증이 완료되었습니다.");
                 setProgress((prevState) => {
                     return { ...prevState, email: true}
@@ -241,69 +235,9 @@ export default function Signup() {
                    
                     <input type='submit' value="회원가입" onClick={handleSignin}></input>
                 </div>
-            <div className="form">
-            <p><input className="login" type="text" placeholder="아이디" onChange={handleIdent}/></p>
-            <p><button onClick={id_check}>아이디 중복 확인</button></p>
-            <p><input className="login" type="text" placeholder="닉네임" onChange={handleNick}/></p>
-            <p><button onClick={nick_check}>닉네임 중복 확인</button></p>
-            <p><input className="login" type="password" placeholder="비밀번호" onChange={handlePassword}/></p>
-            <p><input className="login" type="password" placeholder="비밀번호 재입력" onChange={handlePassword2}/></p>
-            <p><button onClick={password_check}>비밀번호 확인</button></p>
-            <p><input className="login" type="email" placeholder="이메일" onChange={(e) => {
-                setemail(e.target.value);
-                setValue(emailCheck(e.target.value));
-            }}/></p>
-            <p><button onClick={handleEmailCheck}>인증메일 전송</button></p>
-            <p><input className="login" type="text" placeholder="인증번호 입력" onChange={handleVerifyNumber}/></p>
-            <p><button onClick={email_check}>이메일 인증하기</button></p>
-            <p><button onClick={handleSignin}>회원가입</button></p>
-            </div>
-
-            <p>메인화면으로 <button onClick={() => { navigate("/");
-            }}>메인화면</button></p>
             </div>
         </div>
     );
     
-    (
-        <div className={styles.container}>
-            <div className={styles.center}>
-                <h1><Link to='/'>LOGO</Link></h1>
-                <form>
-                    <div className={styles.txt_field}>
-                        <input name='name' type ="text" required></input>
-                        <span></span>
-                        <label htmlFor='name'>이름</label>
-                    </div>
-                    <div className={styles.txt_field}>
-                        <input name='useid' type ="text" required></input>
-                        <span></span>
-                        <label htmlFor='useid'>닉네임</label>
-                    </div>
-                    <div className={styles.txt_field}>
-                        <input name='password' type ="password" required></input>
-                        <span></span>
-                        <label htmlFor='password'>비밀번호</label>
-                    </div>
-                    <div className={`${styles.txt_field} ${(!isValue&&email!=="")?styles.invalue:''}`} >
-                        <input 
-                             onChange={(e)=>{
-                            setemail(e.target.value); 
-                            setValue(emailCheck(e.target.value));
-                            }} 
-                            name='useremail' 
-                            type ="email" 
-                            required    
-                         >
-                            </input>
-                        <span></span>
-                        <label className={styles.email}htmlFor='email'>email</label>
-                    </div>
-                    <input type='submit' value="회원가입"></input>
-                </form>
-            </div>
-
-        </div>
-    );
 }
 

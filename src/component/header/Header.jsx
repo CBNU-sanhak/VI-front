@@ -1,16 +1,19 @@
 import React, { useContext } from "react"
 import styles from './Header.module.css'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LoginModeContext } from "../../context/LoginModeContext";
 
 
 
 export default function Header() {
     const {isLogin, logout} = useContext(LoginModeContext);
-    console.log(isLogin);
+    const navigator = useNavigate();
+
     const handleLogout = () => {
-        console.log("hi");
+        //remove local storage
+        localStorage.removeItem("id");
         logout();
+        navigator('/');
     }
 
     return (

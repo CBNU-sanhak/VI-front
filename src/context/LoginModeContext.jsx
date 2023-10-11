@@ -11,7 +11,12 @@ export function LoginModeProvider({children}) {
 
 
     const login = () => setIsLogin(true); 
-    const logout = () => setIsLogin(false); 
+    const logout = () => {
+        localStorage.removeItem('id');
+        localStorage.removeItem('ident');
+        localStorage.removeItem('token');
+        setIsLogin(false);
+    } 
     
     return <LoginModeContext.Provider value={{isLogin, login, logout}}>{children}</LoginModeContext.Provider>;
 }

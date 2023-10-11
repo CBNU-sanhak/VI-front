@@ -1,6 +1,6 @@
 
 .boardListContainer {
-    width: 100%;
+    width: 90%;
     height: 100%;
     flex-direction: column;
     padding: 20px;
@@ -18,7 +18,7 @@
     border: solid 1px black;
     border-radius: 3px;
     margin-bottom: 16px;
-    width: 90%;
+    width: 100%;
     height: 300px;
 }
 
@@ -46,4 +46,16 @@
     justify-content: end;
     color: #a6a6a6;
     opacity: 1;
+}
+
+.comunity {
+    width: 100%;
+    display: flex;
+    align-items: start;
+}
+
+pageName {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0px;
 }

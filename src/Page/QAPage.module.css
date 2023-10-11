@@ -1,0 +1,38 @@
+.container {
+    width: 90%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0px;
+}
+
+.header {
+    display: flex;
+    padding-bottom: 5px;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.subject {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-bottom:  solid 0.5px black;
+    
+}
+
+
+.content {
+    font-size: 14px;
+    font-weight: bold;
+    height: 300px;
+    border: solid 0.5px gray;
+}

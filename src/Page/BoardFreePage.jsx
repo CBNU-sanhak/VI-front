@@ -1,6 +1,7 @@
-import React,  { useEffect, useState } from 'react';
+import React,  { useContext, useEffect, useState } from 'react';
 import styles from './BoardPage.module.css'
-import { Link, Navigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
+import Search from '../component/Search/Search';
 
 export default function BoardFreePage({boardName}) {
 
@@ -8,20 +9,32 @@ export default function BoardFreePage({boardName}) {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
 
+    const url = "http://localhost:3001/post/" 
+    let category;
+
+    if(boardName==="free")
+        category = 'a';
+    else if(boardName==='interview')
+        category = 'b';
+    else
+        category = 'c';
+
     useEffect(() => {
+        const fetchPosts = async () => {
+            const fetchData = async (url) => {
+                await fetch(url)
+                    .then((response) => response.json())
+                    .then((data) => setPosts(data))
+                    .catch((error) => console.log(error))
+                    };
+                fetchData(url+category);
+        };
+
         fetchPosts();
       }, [boardName]);
 
       //포스트 패치
-    const fetchPosts = async () => {
-        try {
-            const response = await fetch('/dummy/data.json');
-            const data = await response.json();
-            setPosts(data);
-        } catch (error) {
-            console.error('게시글 목록을 가져오는 데 실패했습니다.', error);
-        }
-    };
+    
 
     
     // 현재 페이지에 표시할 게시글 범위 계산
@@ -35,14 +48,7 @@ export default function BoardFreePage({boardName}) {
         setCurrentPage(pageNumber);
     };
 
-    const data = [
-        {
-            제목:"sdf",
-            글쓴이:"최유성",
-            날짜:"22-08-21",
-            id:1,
-        },
-    ]
+   
     return (
         <div className={styles.page}>
             <div className={styles.content}>
@@ -52,8 +58,8 @@ export default function BoardFreePage({boardName}) {
                         <Link key={post.id} to={`/board/${post.id}`} className={styles.postlink}>
                         <article>
                             <h2>{post.title}</h2>
-                            <span>작성자: {post.author}</span>
-                            <span>게시일: {post.date}</span>
+                            <span>작성자: {post.writer}</span>
+                            <span>게시일: {post.p_date}</span>
                         </article>
                         </Link>
                     ))}
@@ -71,13 +77,7 @@ export default function BoardFreePage({boardName}) {
                     ))}
                 </ul>
             </div>
-            <div className={styles.bottom}>
-                <div className={styles.search}>
-                    <input className={styles.input}></input>
-                    <img className={styles.searchIcon}src="/img/searchIcon.png"></img>
-                </div>
-                <Link to={'/board/write'} ><button className={styles.button}> 글작성</button> </Link>
-            </div> 
+            <Search></Search>
         </div>
     );
 }

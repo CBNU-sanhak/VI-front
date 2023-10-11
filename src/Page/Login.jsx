@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+
+import React, { useState, useContext } from 'react';
 import styles from './Login.module.css'
+import { LoginModeContext } from '../context/LoginModeContext';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login() {
+    const {login} = useContext(LoginModeContext);
 
     const [ident, setIdent] = useState("");
     const [pwd, setPwd] = useState("");
     const navigate = useNavigate();
+
 
     return (
         <div className={styles.container}>    
@@ -45,6 +49,14 @@ export default function Login() {
                             }
                             else if(json.data === "true"){
                                     alert("로그인 성공");
+                                    fetch(`http://localhost:3001/get_id/${userData.ident}`)
+                                    .then((response) => response.json())
+                                    .then((data) => {
+                                        localStorage.setItem('id',data[0].id);
+                                    })
+                                    .catch((error) => console.log(error));
+                                    localStorage.setItem('ident',userData.ident);
+                                    login();
                                     navigate("/");
                             }
                             else {
