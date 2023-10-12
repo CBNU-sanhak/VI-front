@@ -3,6 +3,8 @@ import React, { useContext } from 'react';
 import styles from './Home.module.css'
 import { Link } from 'react-router-dom';
 export default function Home() {
+
+    const id = localStorage.getItem('id');
     
     
     return (
@@ -11,7 +13,7 @@ export default function Home() {
 
             <div className={styles.imageContainer}>
                 <img src={"/img/interview.jpg"}></img>
-                <a href='http://localhost:3001/interview'className={styles.shortcutButton}>가상면접</a>
+                <a href={`http://localhost:3001/interview/${id}`} className={styles.shortcutButton}>가상면접</a>
             </div>
             <div className={styles.imageContainer}>
                 <img src={"/img/studyGroup.jpg"}></img>

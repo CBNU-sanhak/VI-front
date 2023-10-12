@@ -6,6 +6,7 @@ import { LoginModeContext } from "../../context/LoginModeContext";
 
 
 export default function Header() {
+    const id = localStorage.getItem('id');
     const {isLogin, logout} = useContext(LoginModeContext);
     const navigator = useNavigate();
 
@@ -22,7 +23,7 @@ export default function Header() {
                 <Link to='/'>LOGO</Link>
             </div>
             <div className={styles.mainmenu}>
-                <a href="http://localhost:3001/">
+                <a href={`http://localhost:3001/interview/${id}`}>
                     <div className={styles.item}>
                         가상면접
                     </div>
