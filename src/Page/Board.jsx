@@ -5,7 +5,7 @@ import Search from '../component/Search/Search';
 
 export default function Board() {
     return (
-        <div className={styles.main}>
+        <div className={styles.container}>
            <BoardList />
            <Search />
         </div>

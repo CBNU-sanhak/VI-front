@@ -50,7 +50,7 @@ export default function BoardFreePage({boardName}) {
 
    
     return (
-        <div className={styles.page}>
+        <div className={styles.container}>
             <div className={styles.content}>
                 <h1 className={styles.title}>{boardName} 게시판</h1>
                 <div className="post-list">

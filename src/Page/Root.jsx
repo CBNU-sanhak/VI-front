@@ -7,11 +7,11 @@ export default function Root() {
         <div>
             <div className='header'><Header /></div>
             <div className='container'>
-                <div className='sideBar'> side Bar</div>
+                <div className='sideBar'></div>
                 <div className='main'>
                     <Outlet  />
                 </div>
-                <div className='sideBar'> side Bar</div>
+                <div className='sideBar'></div>
             </div>
         </div>
     );

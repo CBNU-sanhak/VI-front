@@ -130,7 +130,9 @@ export default function Mypage() {
     }
     return (
         <div className={styles.container}>
-            <h1 className={styles.title}>My Page</h1>
+            <div className={styles.titleDiv}>
+                <h1 className={styles.title}>My Page</h1>
+            </div>
             <div className={styles.content}>
                 <div className={styles.myProfile}>
                     <img src={"/img/newjeans_minji.jpg"} alt="" />

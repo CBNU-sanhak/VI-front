@@ -1,9 +1,12 @@
-.page {
-    width: 100%;
+
+.container{
+    width: 90%;
+    background-color: var(--cloud-white);
     display: flex;
     flex-direction: column;
+    height: 100%;
     align-items: center;
-
+    padding: 10px;
 }
 
 .content {

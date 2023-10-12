@@ -22,11 +22,11 @@ export default function Header() {
                 <Link to='/'>LOGO</Link>
             </div>
             <div className={styles.mainmenu}>
-                <Link to='interview'>
+                <a href="http://localhost:3001/">
                     <div className={styles.item}>
                         가상면접
                     </div>
-                </Link>
+                </a>
                 <Link to='studygroup'>
                     <div className={styles.item}>
                         스터디그룹

@@ -11,7 +11,7 @@ export default function Home() {
 
             <div className={styles.imageContainer}>
                 <img src={"/img/interview.jpg"}></img>
-                <Link to="/interview"className={styles.shortcutButton}>가상면접</Link>
+                <a href='http://localhost:3001/interview'className={styles.shortcutButton}>가상면접</a>
             </div>
             <div className={styles.imageContainer}>
                 <img src={"/img/studyGroup.jpg"}></img>
