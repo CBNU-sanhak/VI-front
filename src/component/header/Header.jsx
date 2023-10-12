@@ -28,11 +28,11 @@ export default function Header() {
                         가상면접
                     </div>
                 </a>
-                <Link to='studygroup'>
+                <a href={`http://localhost:3001/home/${id}`}>
                     <div className={styles.item}>
                         스터디그룹
                     </div>
-                </Link>
+                </a>
                 <Link to='board'>
                     <div className={styles.item}>
                         커뮤니티

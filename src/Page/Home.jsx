@@ -13,11 +13,11 @@ export default function Home() {
 
             <div className={styles.imageContainer}>
                 <img src={"/img/interview.jpg"}></img>
-                <a href={`http://localhost:3001/interview/${id}`} className={styles.shortcutButton}>가상면접</a>
+                <a href={`http://localhost:3001/interview${id}`} className={styles.shortcutButton}>가상면접</a>
             </div>
             <div className={styles.imageContainer}>
                 <img src={"/img/studyGroup.jpg"}></img>
-                <Link to="/studygroup"className={styles.shortcutButton}>스터디그룹</Link>
+                <a href={`http://localhost:3001/home/${id}`}>스터디그룹</a>
             </div>
             <div className={styles.imageContainer}>
                 <img src={"/img/community.jpg"}></img>
