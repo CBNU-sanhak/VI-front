@@ -55,13 +55,15 @@ export default function WriteComment({boardId ,comments, setComments}) {
                 onChange={handleChange}
                 value={comment}
             />
-            <button className={styles.button}
-                tyep="button"
-                onClick={postComment}
-                disabled={!valid}
-            >
-                작성
-            </button>
+            <div className={styles.buttonDiv}>
+                <button className={styles.button}
+                    tyep="button"
+                    onClick={postComment}
+                    disabled={!valid}
+                >
+                    작성하기
+                </button>
+            </div>
         </form>
     );
     

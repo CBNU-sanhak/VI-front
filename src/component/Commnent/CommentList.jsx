@@ -25,6 +25,8 @@ export default function CommentList({ comments ,setComments}) {
         }
     };
 
+    console.log(comments);
+
     return (
         <div className={styles.commentsBox}>
             <span>{comments.length}댓글</span>

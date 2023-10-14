@@ -1,6 +1,8 @@
 import React,{useEffect, useState} from 'react';
 import styles from './help.module.css'
 import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faA, faQ } from '@fortawesome/free-solid-svg-icons';
 
 
 //답변 완료여부 콜럼이 있었으면 좋겠어
@@ -9,18 +11,26 @@ function FAQSection() {
     const faqData = [
       { question: '로그인은 어떻게 하는 건가용?', answer: '이렇게 이렇게 하시면 됩니다.' },
       { question: '질문 2', answer: '답변 2' },
+      { question: '질문 3', answer: '답변 3'}
       // 다른 FAQ 항목들도 추가
     ];
   
     return (
       <div className={styles.faqsection}>
          <h2 className={styles.sectionTitle}>자주 묻는 질문</h2>
-        {faqData.map((item, index) => (
-          <div key={index}>
-            <h3>Q:{item.question}</h3>
-            <p>A:{item.answer}</p>
-          </div>
-        ))}
+         <div className={styles.forScroll}> 
+          {faqData.map((item, index) => (
+            <div className={styles.qadiv} key={index}>
+              <div className={styles.box}>
+                <div className={styles.iconbox}><FontAwesomeIcon icon={faQ} /></div> :{item.question}
+              </div>
+              <div className={styles.box}>
+                <div className={`${styles.iconbox} ${styles.answer}`}><FontAwesomeIcon icon={faA} /></div> :{item.answer}
+              </div>
+              
+            </div>
+          ))}
+         </div>
       </div>
     );
   }
@@ -48,21 +58,25 @@ function FAQSection() {
     return (
       <div className={styles.faqsection}>
         <h2 className={styles.sectionTitle}>FAQ 목록</h2>
-        <ul>
+        <div className={styles.forScroll}>
           {faqList.map((faq, index) => (
-            <li key={index}>
+            <div key={index}>
             {faq.answer_check ===1 ? (
               <Link to={`/qa/${faq.id}`}>
-                <h3>
-                  Q: {faq.i_contents} (답변완료)
-                </h3>
+                <div className={styles.box}>
+                  <div className={styles.iconbox}><FontAwesomeIcon icon={faQ} /></div> :{faq.i_contents}
+                   <div className={`${styles.isaAnswer} ${styles.completed}`}>답변완료</div>
+                </div>
               </Link>
             ) : (
-              <h3>Q: {faq.i_contents} (답변대기)</h3>
+              <div className={styles.box}>
+                  <div className={styles.iconbox}><FontAwesomeIcon icon={faQ} /></div> :{faq.i_contents} 
+                  <div className={ styles.isaAnswer }>답변대기</div>
+              </div>
             )}
-          </li>
+          </div>
           ))}
-        </ul>
+        </div>
       </div>
     );
   }
@@ -109,7 +123,7 @@ function FAQSection() {
   
     return (
         <div className={styles.formContainer}>
-        <h2 className={styles.sectionTitle}>고객 문의하기</h2>
+        <h2 className={styles.sectionTitle}>문의하기</h2>
         <div className={styles.content}>
           <div className={styles.formLabel}>아이디:{ident}</div>
           <label className={styles.formLabel}>
@@ -118,7 +132,7 @@ function FAQSection() {
               console.log(inquire);
             }}/>
           </label>
-          <button onClick={handleSubmit}>제출하기</button>
+          <button className={styles.button} onClick={handleSubmit}>제출하기</button>
           
           {/* 이하 입력 양식 스타일을 적용 */}
         </div>

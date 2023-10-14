@@ -1,13 +1,12 @@
 import React, { createContext, useState } from 'react';
 
-const userId = sessionStorage.getItem('id');
-const token = sessionStorage.getItem('token');
+const userId = localStorage.getItem('id');
 
-export const LoginModeContext = createContext(userId !==null && token !==null? true: false);
+export const LoginModeContext = createContext(userId !==null ? true: false);
 
 export function LoginModeProvider({children}) {
 
-    const [isLogin, setIsLogin] = useState(userId !== null && token !==null ? true : false);
+    const [isLogin, setIsLogin] = useState(userId !== null? true : false);
 
 
     const login = () => setIsLogin(true); 

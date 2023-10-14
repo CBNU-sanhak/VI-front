@@ -45,7 +45,7 @@ export default function Search() {
                         value={searchkeyword}
                         onKeyDown={handleEnterPress}
                         onChange={handleSearch}
-                        className={styles.input}
+                        className={styles.inputcolor}
                     />
                     <img alt = "searchIcon" className={styles.searchIcon}src="/img/searchIcon.png"
                          onClick={performSearch} 

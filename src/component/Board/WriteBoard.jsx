@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import styles from './WriteBoard.module.css'
 
 export default function WriteBoard() {
     const navigate = useNavigate();
@@ -81,24 +81,23 @@ export default function WriteBoard() {
 
 
     return (
-      <div className='flex flex-col justify-center w-4/5 rounded-sm bg-blue-50'>
-        <div className='flex justify-center'>
-          <span className='m-4'>제목</span>
+      <div className={styles.content}>
+        <div className={styles.title}>
+          <span >제목: </span>
           <input type="text" name="title" value={title} onChange={onChange} />
+          <label>카테고리:</label>
+          <select name="category" value={category} onChange={onChange}>
+            <option value="a">free</option>
+            <option value="b">interview</option>
+            <option value="c">job</option>
+          </select>
         </div>
-        <br />
-        <div>
+        <div className={styles.writerInfo}>
           <span>작성자:</span>
           <span>{ident}</span>
         </div>
-        <div>
-          <label>Image:</label>
-          {/* <input type="file" accept="image/*" onChange={handleImageChange} />
-          {imagePreview && <img src={imagePreview} alt="Preview" style={{ maxWidth: '100px', maxHeight: '100px' }} />}
-            {board.img!==null?<button onClick={clearImage}>X</button>:""} */}
-        </div>
-        <div>
-          <div>내용</div>
+        <div className={styles.content}>
+          <span>내용</span>
           <textarea
             name="content"
             cols="30"
@@ -107,17 +106,9 @@ export default function WriteBoard() {
             onChange={onChange}
           ></textarea>
         </div>
-        <div>
-        <label>카테고리:</label>
-        <select name="category" value={category} onChange={onChange}>
-          <option value="a">free</option>
-          <option value="b">interview</option>
-          <option value="c">job</option>
-        </select>
-      </div>
-        <div>
-          <button onClick={saveBoard}>저장</button>
-          <button onClick={backToList}>취소</button>
+        <div className={styles.last}>
+          <button className={styles.saveButton}onClick={saveBoard}>저장</button>
+          <button className={styles.cancelButton}onClick={backToList}>취소</button>
         </div>
       </div>
     );

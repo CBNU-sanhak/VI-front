@@ -45,43 +45,49 @@ export default function BoardList() {
                     <h2 className={styles.pageName}>커뮤니티</h2>
                 </div>
                 <div className={styles.boardCard}>
-                    <span className={styles.title}><Link to="/board/free">자유게시판</Link> </span>
+                    <Link to="/board/free"><div className={styles.title}>자유게시판 </div></Link>
                    
-                    <div>
+                    <div className={styles.forScroll}>
                         {freeData.map((item) => 
-                            (<div  key={item.id} className={styles.content}>
-                                <a href={`/board/${item.id}`}>
-                                    {item.title} 
-                                </a>
-                                <div>날짜:{item.p_date} 추천:{item.recommend}</div>
-                            </div>)
+                            (<Link to={`/board/${item.id}`}>
+                                <div  key={item.id} className={styles.content}>
+                                    <span>
+                                        {item.title} 
+                                    </span>
+                                    <div>날짜:{item.p_date} 추천:{item.recommend}</div>
+                                </div>
+                            </Link>)
                         )}
                     </div>
                 </div>
                 <div className={styles.boardCard}>
-                    <span className={styles.title}><Link to="/board/interview">면접게시판</Link></span>
+                    <Link to="/board/interview"><div className={styles.title}>면접게시판</div></Link>
                     
-                    <div>
+                    <div className={styles.forScroll}>
                         {interviewData.map((item) => 
-                            (<div key={item.id} className={styles.content}>
-                                <a key={item.id}href={`/board/${item.id}`}>
-                                    {item.title} 
-                                </a>
-                                <div>날짜:{item.p_date} 추천:{item.recommend}</div>
-                            </div>)
+                            (<Link to={`/board/${item.id}`}>
+                                <div  key={item.id} className={styles.content}>
+                                    <span>
+                                        {item.title} 
+                                    </span>
+                                    <div>날짜:{item.p_date} 추천:{item.recommend}</div>
+                                </div>
+                            </Link>)
                         )}
                     </div>
                 </div>
                 <div className={styles.boardCard}>
-                    <span className={styles.title}><Link to="/board/job">취업게시판</Link></span>
-                    <div>
+                    <Link to="/board/job"><div className={styles.title}>취업게시판</div></Link>
+                    <div className={styles.forScroll}>
                         {jobData.map((item) => 
-                            (<div key={item.id} className={styles.content}>
-                                <a key={item.id}href={`/board/${item.id}`}>
-                                    {item.title} 
-                                </a>
-                                <div>날짜:{item.p_date} 추천:{item.recommend}</div>
-                            </div>)
+                            (<Link to={`/board/${item.id}`}>
+                                <div  key={item.id} className={styles.content}>
+                                    <span>
+                                        {item.title} 
+                                    </span>
+                                    <div>날짜:{item.p_date} 추천:{item.recommend}</div>
+                                </div>
+                            </Link>)
                         )}
                     </div>
                 </div>

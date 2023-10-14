@@ -9,6 +9,7 @@ export default function Header() {
     const id = localStorage.getItem('id');
     const {isLogin, logout} = useContext(LoginModeContext);
     const navigator = useNavigate();
+    console.log(isLogin);
 
     const handleLogout = () => {
         //remove local storage
@@ -20,7 +21,7 @@ export default function Header() {
     return (
         <div className={styles.header}>
             <div className={styles.icon} >
-                <Link to='/'>LOGO</Link>
+                <Link to='/' className={styles.logo}>VI</Link>
             </div>
             <div className={styles.mainmenu}>
                 <a href={`http://localhost:3001/interview/${id}`}>

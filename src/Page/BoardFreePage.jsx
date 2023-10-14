@@ -56,11 +56,15 @@ export default function BoardFreePage({boardName}) {
                 <div className="post-list">
                     {currentPosts.map((post) => (
                         <Link key={post.id} to={`/board/${post.id}`} className={styles.postlink}>
-                        <article>
-                            <h2>{post.title}</h2>
-                            <span>작성자: {post.writer}</span>
-                            <span>게시일: {post.p_date}</span>
-                        </article>
+                            <div className={styles.postContent}>
+                                <div>
+                                    <h2>{post.title}</h2>
+                                    <span>작성자: {post.nickname}</span>
+                                </div>
+                                <div className={styles.postinfo}>
+                                    <span>게시일: {post.p_date} 추천: {post.recommend}</span>
+                                </div>
+                            </div>
                         </Link>
                     ))}
                 </div>
@@ -76,8 +80,8 @@ export default function BoardFreePage({boardName}) {
                     </li>
                     ))}
                 </ul>
+                <Search></Search>
             </div>
-            <Search></Search>
         </div>
     );
 }

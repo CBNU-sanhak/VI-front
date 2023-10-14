@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './BoardMain.module.css'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 export default function BoardMain({post}) {
 
     const {boardId} = useParams();
@@ -70,22 +71,22 @@ export default function BoardMain({post}) {
     
 
 
-    const {title,writer,content,p_date} = post;
+    const {title,writer,content,p_date,nickname} = post;
     
 
     return (
         <div className={styles.container}>
+            <div >
+                <h1 className={styles.subject}> {title} </h1>
+            </div>
             <div className={styles.header}>
-                <div>작성자:{writer}</div>
+                <div>작성자:{nickname}</div>
                 <div>날짜:{p_date}</div>
                 <div>추천:{recommendationCount}</div>
             </div>
-            <div className={styles.content}>
-                <h2 className={styles.subject}> 제목:{title} </h2>
-                <div className={styles.content}>내용:{content}</div>
-            </div>
-            <div>
-                <button onClick={handleRecommendationClick}>추천</button>
+            <div className={styles.contentbox}>
+                <div className={styles.content}>내용:{content}</div>    
+                <button onClick={handleRecommendationClick}><FontAwesomeIcon icon={faThumbsUp} /></button>
             </div>
         </div>
     );

@@ -15,7 +15,7 @@ export default function Login() {
     return (
         <div className={styles.container}>    
             <div className={styles.center}>
-                <h1><Link to='/'>LOGO</Link></h1>
+                <h1><Link to='/'>VI</Link></h1>
                 <div className={styles.form}>
                     <div className={styles.txt_field}>
                         <input className="login" type="text" name="username"  

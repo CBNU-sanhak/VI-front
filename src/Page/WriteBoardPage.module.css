@@ -1,11 +1,15 @@
-.container{
+.container {
+    width: 90%;
+    background-color: var(--cloud-white);
     display: flex;
     flex-direction: column;
-    width: 90%;
     height: 100%;
     align-items: center;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 9px 11px 18px 1px rgba(140,129,129,1);
-    background-color: var(--cloud-white);
+}
+
+.titleDiv {
+    width: 100%;
 }
