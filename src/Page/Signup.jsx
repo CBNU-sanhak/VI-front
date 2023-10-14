@@ -135,7 +135,7 @@ export default function Signup() {
 }
 
     function handleVerifyNumber(e) {
-        setNvum2(e.target.value);
+        setNvum2(Number(e.target.value));
     }
 
     function email_check() {
