@@ -139,7 +139,7 @@ export default function Mypage() {
                     </div>
                 </div>
                 <div className={styles.myActives}>
-                    <a href={`http://localhost:3001/`}className={styles.goToMyInterview}>
+                    <a href={`http://localhost:3001/mypage/${id}`}className={styles.goToMyInterview}>
                         <h3>나의 면접결과 보러가기</h3><FontAwesomeIcon icon={faEye} />
                     </a>
                     <div className={styles.forScroll}>
