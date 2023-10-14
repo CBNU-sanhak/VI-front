@@ -1,10 +1,11 @@
 @import 'reset.css';
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 :root {
   --primary-blue: #A0D3F9; /* 하늘 파란색 */
+  --primary-red:#EE8091;
+  --deep-red:#B34B5F;
   --cloud-white: #ffffff; /* 구름 흰색 */
   --beach-sand: #f5e7da; /* 해변 모래색 */
   --deep-blue: #2691d9; /* 푸른 바다색 */
@@ -12,8 +13,7 @@
 
 body {
   background-color: var(--cloud-white);
-  height: 100vh;
-  width: 100vw;
+
 }
 
 code {
@@ -22,18 +22,14 @@ code {
 }
 
 #root {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
 }
-
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
-.container, .sideBar, .main, .sideBar {
-  height: 100%;
-}
-

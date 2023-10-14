@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Login.module.css'
+import styles from './Signup.module.css'
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Signup() {
@@ -197,13 +197,13 @@ export default function Signup() {
                         <input name='name' type ="text" required onChange={handleIdent}></input>
                         <span></span>
                         <label htmlFor='name'>이름</label>
-                        <p><button onClick={id_check}>아이디 중복 확인</button></p>
+                        <button onClick={id_check}>아이디 중복 확인</button>
                     </div>
                     <div className={styles.txt_field}>
                         <input name='useid' type ="text" required onChange={handleNick}></input>
                         <span></span>
                         <label htmlFor='useid'>닉네임</label>
-                        <p><button onClick={nick_check}>닉네임 중복 확인</button></p>
+                        <button onClick={nick_check}>닉네임 중복 확인</button>
                     </div>
                     <div className={styles.txt_field}>
                         <input name='password' type ="password" required onChange={handlePassword}></input>
@@ -214,7 +214,7 @@ export default function Signup() {
                         <input name='password' type ="password" required  onChange={handlePassword2}></input>
                         <span></span>
                         <label htmlFor='password'>비밀번호 재입력</label>
-                        <p><button onClick={password_check}>비밀번호 확인</button></p>
+                        <button onClick={password_check}>비밀번호 확인</button>
                     </div>
                     <div className={`${styles.txt_field} ${(!isValue&&email!=="")?styles.invalue:''}`} >
                         <input type="email" onChange={(e) => {
@@ -223,13 +223,13 @@ export default function Signup() {
                         }}/>
                         <span></span>
                         <label htmlFor='password'>이메일</label>
-                        <p><button onClick={handleEmailCheck}>인증메일 전송</button></p>
+                        <button onClick={handleEmailCheck}>인증메일 전송</button>
                     </div>
                     <div className={styles.txt_field} >
                         <input className="login" type="text" onChange={handleVerifyNumber}/>
                         <span></span>
                         <label htmlFor='password'>인증번호 입력</label>
-                        <p><button onClick={email_check}>이메일 인증하기</button></p>
+                        <button onClick={email_check}>이메일 인증하기</button>
                     </div>
                     
                    

@@ -3,19 +3,16 @@
     display: flex;
     align-items: center;
     background-color: var(--beach-sand);;
+    justify-content: center;
 }
 
 .center {
-    position: absolute;
-    top :50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 450px;
-    height: 500px;
+    height: 600px;
     background: white;
+    border-radius: 10px;
     background-color: var(--cloud-white);
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 9px 11px 18px 1px rgba(140,129,129,1);
 }
 
@@ -27,12 +24,11 @@
 
 }
 
-.form{
-}
 .txt_field{
     position: relative;
     border-bottom: 2px solid var(--primary-blue);
-    margin: 30px 0;
+    margin: 20px 0;
+    display: flex;
 }
 .txt_field input{
     width: 100%;
@@ -52,7 +48,7 @@
     font-size: 16px;
     pointer-events: none;
     transition: .5s;
-    top: -5px;
+    top: -3px;
 }
 .txt_field span::before{
     content: " ";
@@ -74,8 +70,15 @@
     width:100%;
 }
 
-
-
+.txt_field button {
+    background-color:var(--deep-blue);
+    color: var(--cloud-white);
+    font-size: 8px;
+    margin-bottom: 1px;
+    border-radius: 5px;
+    width: 65px;
+    height: 40px;
+}
 /* 
 .invalue span::before{
     content: '';

@@ -25,6 +25,7 @@ import Interview from './Page/Interview';
 import StudyGroup from './Page/StudyGroup';
 import QAPage from './Page/QAPage';
 import SearchResults from './Page/SearchResultPage';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const router = createBrowserRouter([

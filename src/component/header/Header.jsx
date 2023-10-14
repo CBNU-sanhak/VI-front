@@ -9,6 +9,7 @@ export default function Header() {
     const id = localStorage.getItem('id');
     const {isLogin, logout} = useContext(LoginModeContext);
     const navigator = useNavigate();
+    console.log(isLogin);
 
     const handleLogout = () => {
         //remove local storage
@@ -20,7 +21,7 @@ export default function Header() {
     return (
         <div className={styles.header}>
             <div className={styles.icon} >
-                <Link to='/'>LOGO</Link>
+                <Link to='/' className={styles.logo}>VI</Link>
             </div>
             <div className={styles.mainmenu}>
                 <a href={`http://localhost:3001/interview/${id}`}>
@@ -28,11 +29,11 @@ export default function Header() {
                         가상면접
                     </div>
                 </a>
-                <Link to='studygroup'>
+                <a href={`http://localhost:3001/home/${id}`}>
                     <div className={styles.item}>
                         스터디그룹
                     </div>
-                </Link>
+                </a>
                 <Link to='board'>
                     <div className={styles.item}>
                         커뮤니티

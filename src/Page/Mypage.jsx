@@ -2,6 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Mypage.module.css'
 import { LoginModeContext } from '../context/LoginModeContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment, faEye, faPenNib } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function Mypage() {
     const id = localStorage.getItem('id');
@@ -73,15 +76,7 @@ export default function Mypage() {
 
 
 
-    const info = {
-        id:"cys9813",
-        nickName : "초이스타",
-        name : "최유성",
-        email:"cys9813@naver.com",
-        myInterviewResult : [1234,2345,3456],
-        myStudygroup: ["네이버스터디그룹","카카오스터디그룹","라인스터디그룹","쿠팡스터디그룹"]
 
-    }
 
     const onLogoutButtonClick = () => {
         logout();
@@ -144,33 +139,34 @@ export default function Mypage() {
                     </div>
                 </div>
                 <div className={styles.myActives}>
-                    <div className={styles.myActive}>
-                        <h3>나의 면접결과</h3>
-                            나의 면접결과 {info.myInterviewResult.map((item)=> <Link to={`/interview/result/${item}`}><span>면접번호:{item}</span></Link>)}
-                    </div>
-                    <div  className={styles.myActive}>
-                        <h3>나의 스터디그룹</h3>
-                           {info.myStudygroup.map((item)=> <span>{item}</span>)} 
+                    <a href={`http://localhost:3001/`}className={styles.goToMyInterview}>
+                        <h3>나의 면접결과 보러가기</h3><FontAwesomeIcon icon={faEye} />
+                    </a>
+                    <div className={styles.forScroll}>
+                        <div  className={styles.myActive}>
+                            <div>
+                                <h3>내가쓴 게시글 <FontAwesomeIcon icon={faPenNib} /></h3>
+                            </div>
+                            {myPost.map((item)=> {
+                                return (
+                                <div className={styles.itembox} key={item.id}>
+                                    <Link to={'/board/'+item.id}>{item.title}</Link>
+                                    <button onClick={()=>onClickDeletePost(item.id)}> 삭제 </button>
+                                </div>)
+                            })}
+                        </div>
                     </div> 
                     <div  className={styles.myActive}>
-                        <h3>내가쓴 게시글</h3>
-                        {myPost.map((item)=> {
-                            return (
-                            <span key={item.id}>
-                                <Link to={'/board/'+item.id}>{item.title}</Link>
-                                <button onClick={()=>onClickDeletePost(item.id)}> x </button>
-                            </span>)
-                        })}
-                    </div> 
-                    <div  className={styles.myActive}>
-                        <h3>내가 쓴 댓글 </h3>
-                        {myComment.map((item)=> {
-                            return (
-                            <span key={item.id}>
-                                <Link to={'/board/'+item.p_no}>{item.content}</Link>
-                                <button onClick={()=>onClickDeleteComment(item.id)}> x </button>
-                            </span>)
-                        })} 
+                        <h3>내가 쓴 댓글 <FontAwesomeIcon icon={faComment} /></h3>
+                        <div className={styles.forScroll}>
+                            {myComment.map((item)=> {
+                                return (
+                                <div className={styles.itembox} key={item.id}>
+                                    <Link to={'/board/'+item.p_no}>{item.content}</Link>
+                                    <button onClick={()=>onClickDeleteComment(item.id)}> 삭제 </button>
+                                </div>)
+                            })} 
+                        </div>
                     </div> 
                 </div>
                         

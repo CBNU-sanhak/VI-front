@@ -4,7 +4,7 @@ import BoardMain from '../component/Board/BoardMain';
 import WriteComment from '../component/Commnent/WriteComment';
 import CommentList from '../component/Commnent/CommentList';
 import { useParams } from 'react-router-dom';
-
+import styles from './BoardDetail.module.css'
 
 export default function BoardDetail() {
 
@@ -42,11 +42,11 @@ export default function BoardDetail() {
             {loading ? (
                 <p>Loading...</p>
             ) : (
-                <>
+                <div className={styles.container}>
                     <BoardMain post={post} />
                     <WriteComment boardId={boardId}  comments={comments} setComments={setComments}/>
                     <CommentList boardId={boardId} comments={comments} setComments={setComments} />
-                </>
+                </div>
             )}
         </>
     );

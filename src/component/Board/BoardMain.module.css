@@ -1,4 +1,5 @@
 .container {
+    margin-top: 15px;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -10,20 +11,51 @@
     border-bottom: solid 1px gray;
     padding-bottom: 5px;
     justify-content: space-between;
-    margin-top: 5px;
+    margin-top: 3px;
+    margin-bottom: 10px;
 }
 
 .subject {
-    font-size: 22px;
     font-weight: bold;
-    color: red;
     margin-bottom: 20px;
     margin-top: 5px;
     
 }
 
 
+.contentbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    min-height: 100px;
+}
+
+.contentbox  button{
+    background-color: var(--primary-blue); /* 추천 버튼의 배경색 */
+  color: #fff; /* 텍스트 색상 */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+
+  /* 아이콘 스타일 */
+  .svg-inline--fa {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+
+  &:hover {
+    background-color: var(--deep-blue); /* 마우스 오버시 배경색 변경 */
+  }
+}
+
 .content {
-    
-    border-bottom: solid 0.5px gray;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: solid 1px gray;
 }

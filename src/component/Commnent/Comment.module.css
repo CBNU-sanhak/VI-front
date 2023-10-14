@@ -14,3 +14,28 @@
     font-size: 0.9rem;
     opacity: 0.5;
 }
+
+.comment {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment button{
+    width: 70px;
+    background-color: var(--primary-red); /* 추천 버튼의 배경색 */
+  color: #fff; /* 텍스트 색상 */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--deep-red); /* 마우스 오버시 배경색 변경 */
+  }
+}
+

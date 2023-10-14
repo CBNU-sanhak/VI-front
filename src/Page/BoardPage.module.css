@@ -6,7 +6,9 @@
     flex-direction: column;
     height: 100%;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 9px 11px 18px 1px rgba(140,129,129,1);
 }
 
 .content {
@@ -130,4 +132,24 @@
   
   .postlink:hover {
     background-color: #f0f0f0; /* 호버 시 배경색 변경 (선택 사항) */
+  }
+
+  .postlink:hover h2 {
+    color: var(--deep-blue);
+  }
+
+  .postContent{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .postContent h2{
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .postinfo {
+    display: flex;
+    align-items: center;
+  
   }

@@ -6,9 +6,11 @@
     height: 100%;
     width: 90%;
     background-color: var(--cloud-white);
-    padding: 10px;
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 9px 11px 18px 1px rgba(140,129,129,1);
     
   }
 h1 {
@@ -16,13 +18,14 @@ h1 {
     font-weight: bold;
     margin: 20px 0px;
 }
-.faqsection {
+
+.faqsection, .formContainer {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: 1.5px solid black;
     width: 100%;
     flex: 1;
-    border-radius: 1rem;
+    border-radius: 5px;
     margin-bottom: 15px;
     padding: 15px;
 }
@@ -36,20 +39,12 @@ h1 {
     font-weight: bold;
   }
   
-  .formContainer {
-      width: 100%;
-      border-radius: 1rem;
-      margin-top: 20px;
-      flex: 1;
-    margin-bottom: 15px;
-    padding: 15px;
-    border: 1px solid black;
-  }
-  
+
   .formLabel {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    width: 100%;
   }
   
   .formInput {
@@ -69,6 +64,96 @@ h1 {
   }
 
   .content {
-    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-top: 30px;
+
   }
+
+  .qadiv {
+    width: 100%;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+
+  }
+
+  .box {
+    display: flex;
+    padding: 5px;
+  }
+  .iconbox {
+    background-color: var(--primary-blue);
+    color: white;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    font-size: 20px;
+  }
+
+  .answer {
+    background-color: var(--primary-red);
+  }
+
+  .isaAnswer {
+    margin-left: auto;
+    width: 100px;
+    height: 30px;
+    background-color: var(--primary-blue); /* 추천 버튼의 배경색 */
+    color: #fff; /* 텍스트 색상 */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--deep-blue); /* 마우스 오버시 배경색 변경 */
+  }
+  }
+
+  .forScroll {
+    font-size: 20px;
+    max-height: 200px;
+    overflow-y: auto; 
+  }
+
+  .button{
+    width: 100px;
+    height: 50px;
+    background-color: var(--primary-blue); /* 추천 버튼의 배경색 */
+    color: #fff; /* 텍스트 색상 */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--deep-blue); /* 마우스 오버시 배경색 변경 */
+  }
+}
   
+
+  .formContainer {
+    display: flex;
+  }
+
+  .completed {
+    background-color: var(--primary-red);
+    &:hover {
+      background-color: var(--deep-red);
+    }
+  }

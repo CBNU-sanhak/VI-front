@@ -1,0 +1,95 @@
+.content {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.title span, label {
+    font-size: 23px;
+    font-weight: bold;
+}
+.title select {
+    border: 1px solid black;
+}
+
+.title input {
+    width: 70%;
+    border: 1px solid black;
+    height: 30px;
+    margin-right: 10px;
+}
+.title input:focus {
+    outline: none;
+    border: 2px solid var(--deep-blue);
+}
+.title {
+    height: 50px;
+}
+
+.writerInfo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.content span {
+    font-size: 23px;
+    font-weight: bold;
+}
+.content textarea{
+    border:1px solid black ;
+
+}
+.content textarea:focus {
+    outline: none;
+    border: 2px solid var(--deep-blue);
+}
+
+.last {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.saveButton {
+    width: 70px;
+    height: 50px;
+    background-color: var(--primary-blue); /* 추천 버튼의 배경색 */
+    color: #fff; /* 텍스트 색상 */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+
+  &:hover {
+    background-color: var(--deep-blue); /* 마우스 오버시 배경색 변경 */
+  }
+
+}
+
+.cancelButton {
+    width: 70px;
+    height: 50px;
+    background-color: var(--primary-red); /* 추천 버튼의 배경색 */
+    color: #fff; /* 텍스트 색상 */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+
+  &:hover {
+    background-color: var(--deep-red); /* 마우스 오버시 배경색 변경 */
+  }
+
+}
+
+

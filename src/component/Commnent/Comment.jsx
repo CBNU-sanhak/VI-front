@@ -18,10 +18,12 @@ export default function Comment( {item , onDelete}) {
                 <div>작성자:{ writer}| </div>
                 <div className={styles.date}>{c_date}</div>
             </div>
-            <div className={styles.comment}>    {content}</div>
-            {idNumber === item.writer && (
-                            <button onClick={() => onDelete(item.id)}>Delete</button>
-                        )}
+            <div className={styles.comment}>
+                <div>    {content}</div>
+                {idNumber === item.writer && (
+                                <button onClick={() => onDelete(item.id)}>삭제</button>
+                            )}
+            </div>
         </div>
     );
 }

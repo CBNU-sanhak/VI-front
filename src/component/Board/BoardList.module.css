@@ -1,13 +1,11 @@
 
 .boardListContainer {
-    width: 90%;
+    width: 100%;
     height: 85%;
     flex-direction: column;
-    padding: 10px ;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    background-color: var(--cloud-white);
 }
 .boardCard {
     padding: 10px;
@@ -23,22 +21,39 @@
 }
 
 .title {
-    color: gray;
+    color: black;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
     display: flex;
     border-bottom: solid 2px gray;
     padding-bottom: 4px;
 }
 
+.title:hover {
+    color: var(--deep-blue);
+}
+
 .content {
-    font-size: 14px;
+    font-size: 16px;
     color: black;
     padding: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid  #a6a6a6;;
+    background-color: var(--cloud-white);
+    padding: 10px;
+    border: 1px solid rgba(140, 129, 129, 1);
+    border-radius: 5px;
+    margin: 5px 0;
+    transition: background-color 0.2s ease;
+    
+    
+}
+
+
+.content:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
 }
 
 .content > div{
@@ -58,4 +73,9 @@
     margin: 20px 0px;
     font-size: 30px;
     font-weight: bold;
+}
+
+.forScroll{
+    max-height: 300px; /* 내용이 이 높이를 넘어가면 스크롤바가 나타납니다. */
+    overflow-y: auto; /* 세로 스크롤바를 활성화합니다. */
 }

@@ -6,13 +6,22 @@
     border-bottom: solid 1px var(--cloud-white); /* 흰색으로 변경 */
     font-family: Arial, sans-serif; /* 원하는 글꼴로 변경 */
 }
+.logo {
+    font-size: 30px;
+    color: var(--cloud-white);
+    font-weight: bold;
+}
+
+.logo:hover {
+    color: black;
+}
 .icon {
     flex: 1;
     margin: 30px;
 }
 
 .mainmenu {
-    flex: 2;
+    flex: 3;
     display: flex;
     justify-content: center;
 }
@@ -23,17 +32,18 @@
     color: var(--cloud-white); /* 글자 색상을 해변 모래색으로 지정 */
     border-radius: 0.5rem;
     transition: font-size 0.2s; /* 글자 크기에 트랜지션 효과 추가 */
+    white-space: nowrap;
 }
 
 .item:hover {
     cursor: pointer;
-    color: white; /* 호버 시 글자 색상을 흰색으로 변경 */
+    color: black; /* 호버 시 글자 색상을 흰색으로 변경 */
     position: relative;
-    font-size: 1.05em; /* 호버 시 글자 크기 조금 키우기 */
+    font-size: 1.1em; /* 호버 시 글자 크기 조금 키우기 */
 }
 
 .item:hover > a {
-    color: white;
+    color: black;
 }
 
 .usermenu {
@@ -45,3 +55,4 @@
 .usermenu div {
     margin: 10px;
 }
+
