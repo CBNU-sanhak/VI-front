@@ -30,12 +30,12 @@ export default function Mypage() {
             
 
             //나의 면접 결과
-            await fetch(`http://localhost:3001/result/get_result/${id}`)
-            .then((response) => response.json())
-                    .then((data) => {
-                        console.log(data);
-                    })
-                    .catch((error) => console.log(error))
+            // await fetch(`http://localhost:3001/result/get_result/${id}`)
+            // .then((response) => response.json())
+            //         .then((data) => {
+            //             console.log(data);
+            //         })
+            //         .catch((error) => console.log(error))
             
             //나늬  스터디 그룹 불러오기(api 없음)
             // await fetch(`http://localhost:3001/customer/${id}`)
@@ -45,7 +45,6 @@ export default function Mypage() {
             //         })
             //         .catch((error) => console.log(error))
 
-            
         
 
             //내가 쓴 댓글
@@ -130,7 +129,8 @@ export default function Mypage() {
             </div>
             <div className={styles.content}>
                 <div className={styles.myProfile}>
-                    <img src={"/img/newjeans_minji.jpg"} alt="" />
+                    <img src={"/img/profile.png"} alt="profile" />
+                    <button className={styles.button}>프로필 편집</button>
                     <h3>{myInfo.ident}</h3>
                     <p><span>{myInfo.nickName}</span></p>
                     <p>{myInfo.email}</p>
@@ -139,7 +139,7 @@ export default function Mypage() {
                     </div>
                 </div>
                 <div className={styles.myActives}>
-                    <a href={`http://localhost:3001/`}className={styles.goToMyInterview}>
+                    <a href={`http://localhost:3001/mypage/${id}`}className={styles.goToMyInterview}>
                         <h3>나의 면접결과 보러가기</h3><FontAwesomeIcon icon={faEye} />
                     </a>
                     <div className={styles.forScroll}>
