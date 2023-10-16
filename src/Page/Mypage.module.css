@@ -169,7 +169,6 @@
 }
 .itembox button{
     width: 50px;
-    background-color: var(--primary-red); /* 추천 버튼의 배경색 */
     color: #fff; /* 텍스트 색상 */
     border: none;
     border-radius: 4px;
@@ -180,8 +179,23 @@
     justify-content: center;
     transition: background-color 0.3s ease;
 
+}
+
+.updateAndDelete{
+  display: flex;
+}
+
+.deleteButton{
+    background-color: var(--primary-red);
+    &:hover {
+      background-color: var(--deep-red); /* 마우스 오버시 배경색 변경 */
+    }
+}
+
+.updateButton {
+  background-color: var(--primary-blue);
   &:hover {
-    background-color: var(--deep-red); /* 마우스 오버시 배경색 변경 */
+    background-color: var(--deep-blue); /* 마우스 오버시 배경색 변경 */
   }
 }
   

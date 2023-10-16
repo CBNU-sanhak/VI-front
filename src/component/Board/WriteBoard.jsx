@@ -55,35 +55,12 @@ export default function WriteBoard() {
     const backToList = () => {
       navigate('/board');
     };
-  
-
-    // const handleImageChange = (e) => {
-    //     const selectedImage =e.target.files[0];
-    //     setBoard({
-    //         ...board,
-    //         img: selectedImage,
-    //       });
-    //       if(selectedImage!==null){
-    //           const imageURL = URL.createObjectURL(selectedImage);
-    //           setImagePreview(imageURL);
-    //       }
-    //   };
-
-    //   const clearImage = () => {
-    //     setBoard({
-    //       ...board,
-    //       img: null,
-    //     });
-    //     setImagePreview(null);
-    //   };
 
   
-
-
     return (
       <div className={styles.content}>
         <div className={styles.title}>
-          <span >제목: </span>
+          <span className={styles.jmok}>제목: </span>
           <input type="text" name="title" value={title} onChange={onChange} />
           <label>카테고리:</label>
           <select name="category" value={category} onChange={onChange}>

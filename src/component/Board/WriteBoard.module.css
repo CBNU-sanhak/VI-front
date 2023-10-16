@@ -4,8 +4,9 @@
     flex-direction: column;
     width: 100%;
 }
+
 .title span, label {
-    font-size: 23px;
+    font-size: 20px;
     font-weight: bold;
 }
 .title select {
@@ -13,7 +14,7 @@
 }
 
 .title input {
-    width: 70%;
+    width: 50%;
     border: 1px solid black;
     height: 30px;
     margin-right: 10px;
@@ -27,14 +28,19 @@
 }
 
 .writerInfo {
-    font-size: 23px;
+    font-size: 20px;
     font-weight: bold;
+}
+.writerInfo span:nth-child(2) {
+    color: var(--deep-blue);
 }
 
 .content span {
-    font-size: 23px;
+    font-size: 20px;
     font-weight: bold;
 }
+
+
 .content textarea{
     border:1px solid black ;
 

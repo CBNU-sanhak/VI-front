@@ -26,6 +26,8 @@ import StudyGroup from './Page/StudyGroup';
 import QAPage from './Page/QAPage';
 import SearchResults from './Page/SearchResultPage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import UpdateBoard from './Page/UpdateBoardPage';
+import UpdateBoardPage from './Page/UpdateBoardPage';
 
 
 const router = createBrowserRouter([
@@ -49,6 +51,11 @@ const router = createBrowserRouter([
           element: <BoardDetail />,
           errorElement: <ErrorPage />,
       
+        },
+        {
+          path: "/board/update/:boardId",
+          element: <UpdateBoardPage />,
+          errorElement: <ErrorPage />,
         },
         {
           path: "/board",
@@ -85,6 +92,7 @@ const router = createBrowserRouter([
           element: <QAPage />,
           errorElement: <ErrorPage />,
         },
+
         {
           path: "/help",
           element: <Help />,

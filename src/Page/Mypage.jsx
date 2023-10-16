@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Mypage.module.css'
 import { LoginModeContext } from '../context/LoginModeContext';
@@ -15,6 +15,63 @@ export default function Mypage() {
     const [myPost, setMyPost] = useState([]);
     const {logout} = useContext(LoginModeContext);
     const navigation = useNavigate();
+    const [selectedFile, setSelectedFile] = useState(null);
+    const [previewURL, setPreviewURL] = useState(null);
+    const fileInputRef = useRef(null);
+
+    const handleFileSelect = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            setSelectedFile(file);
+            const url = URL.createObjectURL(file);
+            setPreviewURL(url);
+            setMyInfo((prevInfo) => ({
+                ...prevInfo,
+                image_url: url,
+            }));
+        }
+    };
+
+    const openFileInput = () => {
+        fileInputRef.current.click();
+    };
+
+    const handleImageUpload = async () => {
+        if (selectedFile) {
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+
+            const options = {
+                method: 'POST',
+                body: formData,
+              };
+
+             const imageUrl = await fetch('http://localhost:3001/image', options)
+             .then(response => response.json())
+             .then((json) =>json.data);
+
+            const updateProfileRequest = await fetch(`http://localhost:3001/customer/update/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: id,
+                    image_url: imageUrl
+                })
+            });
+
+            const updateData = await updateProfileRequest.json();
+
+            if (updateData.data === 'ok') {
+                alert('프로필이 수정되었습니다.');
+            }
+            //  .then(json => {
+            //     if (json.data==='ok') {
+            //         alert("프로필이 수정되었습니다..");
+            //  }})
+        }
+    };
 
     useEffect(() => {
         const getData =  async() =>{
@@ -73,10 +130,6 @@ export default function Mypage() {
 
     //특정 고객의 모든 면접 결과 불러오기api, studygroup 불러오기
 
-
-
-
-
     const onLogoutButtonClick = () => {
         logout();
         navigation('/');
@@ -119,9 +172,8 @@ export default function Mypage() {
         }
     }
 
-    const   onChangdInfoButtonClcik = () => {
-        
-    }
+
+
     return (
         <div className={styles.container}>
             <div className={styles.titleDiv}>
@@ -129,8 +181,25 @@ export default function Mypage() {
             </div>
             <div className={styles.content}>
                 <div className={styles.myProfile}>
-                    <img src={"/img/profile.png"} alt="profile" />
-                    <button className={styles.button}>프로필 편집</button>
+                    {myInfo.image_url === null ? (
+                        <img src={"/img/profile.png"} alt="profile" />
+                        ) : (
+                            <img src={myInfo.image_url} alt="profile" />
+                    )}
+                     <input
+                        type="file"
+                        ref={fileInputRef}
+                        style={{ display: 'none' }}
+                        accept="image/*"
+                        name='file'
+                        onChange={handleFileSelect}
+                    />
+                    <button className={styles.button} onClick={openFileInput}>
+                        이미지 선택
+                    </button>
+                    <button className={styles.button} onClick={handleImageUpload}>
+                        수정
+                    </button>
                     <h3>{myInfo.ident}</h3>
                     <p><span>{myInfo.nickName}</span></p>
                     <p>{myInfo.email}</p>
@@ -151,7 +220,10 @@ export default function Mypage() {
                                 return (
                                 <div className={styles.itembox} key={item.id}>
                                     <Link to={'/board/'+item.id}>{item.title}</Link>
-                                    <button onClick={()=>onClickDeletePost(item.id)}> 삭제 </button>
+                                    <div className={styles.updateAndDelete}>
+                                        <Link to={'/board/update/'+item.id}><button className={styles.updateButton}> 수정</button></Link>
+                                        <button className={styles.deleteButton} onClick={()=>onClickDeletePost(item.id)}> 삭제 </button>
+                                    </div>
                                 </div>)
                             })}
                         </div>
@@ -163,7 +235,7 @@ export default function Mypage() {
                                 return (
                                 <div className={styles.itembox} key={item.id}>
                                     <Link to={'/board/'+item.p_no}>{item.content}</Link>
-                                    <button onClick={()=>onClickDeleteComment(item.id)}> 삭제 </button>
+                                    <button className={styles.deleteButton} onClick={()=>onClickDeleteComment(item.id)}> 삭제 </button>
                                 </div>)
                             })} 
                         </div>
