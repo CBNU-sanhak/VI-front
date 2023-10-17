@@ -36,7 +36,7 @@ export default function QAPage() {
         <div className={styles.answer}>답변:{question.answer}</div>
       </div>
       <div>
-        <button onClick={handlePreviousButtonClick}>이전</button>
+        <button className={styles.goback}onClick={handlePreviousButtonClick}>이전</button>
       </div>
     </div>
   );

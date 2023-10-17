@@ -28,6 +28,7 @@ import SearchResults from './Page/SearchResultPage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UpdateBoard from './Page/UpdateBoardPage';
 import UpdateBoardPage from './Page/UpdateBoardPage';
+import AdminAnswerPage from './Page/adminPage/AdminAnswerPage';
 
 
 const router = createBrowserRouter([
@@ -131,19 +132,15 @@ const router = createBrowserRouter([
       element: <AdminPageLayout />,
       errorElement: <ErrorPage />,
       children:[
-        { index:true,element:<AdminMainPage/>},
-        { path: "customer-service",
+        { index:true,
           element: <AdminCustomerService />
         },
         { path: "board",
           element: <AdminBoard />
         },
-        { path: "studygroup",
-          element: <AdminStudygroup />
-        },
-        { path: "interview",
-          element: <AdminInterview />
-        },
+        { path: "qa/answer/:id",
+          element: <AdminAnswerPage />
+        }
       ]
   }
   

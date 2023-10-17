@@ -19,19 +19,21 @@ export default function SearchResultPage() {
     fetchSearchResults(); // 이 함수를 구현해야 함
   }, []);
 
-  const fetchSearchResults = () => {
+  const fetchSearchResults = async() => {
     // 여기에서 검색 결과를 가져오는 비동기 요청을 수행
     // 결과를 setSearchResults로 설정
-    
-    const data = [
-      // 검색 결과 데이터 예시
-      { id: 1, title: '검색 결과 1', description: '검색 결과 설명 1' },
-      { id: 2, title: '검색 결과 2', description: '검색 결과 설명 2' },
-      // 검색 결과 데이터 추가
-    ];
-
-    setSearchResults(data); // 위에서 가져온 실제 검색 결과 데이터로 설정
-  };
+      await fetch('http://localhost:3001/post/search',
+          {
+            method: 'POST', // POST 메서드를 사용
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ title: query }), // 검색어를 서버로 보내기
+        })
+        .then((response) => response.json())
+        .then((data) =>  setSearchResults(data))
+        .catch((error) => console.log(error))
+    };
 
   const indexOfLastResult = currentPage * resultsPerPage;
   const indexOfFirstResult = indexOfLastResult - resultsPerPage;
@@ -42,17 +44,21 @@ export default function SearchResultPage() {
   };
 
   return (
-    <div className={styles.page}>
+    <div className={styles.container}>
         <div className={styles.content}>
             <h1 className={styles.title}> 검색결과</h1>
             <div className="post-list">
                 {currentResults.map((searchResult) => (
                     <Link key={searchResult.id} to={`/board/${searchResult.id}`} className={styles.postlink}>
-                    <article>
-                        <h2>{searchResult.title}</h2>
-                        <span>작성자: {searchResult.writer}</span>
-                        <span>게시일: {searchResult.p_date}</span>
-                    </article>
+                      <div className={styles.postContent}>
+                          <div>
+                              <h2>{searchResult.title}</h2>
+                              <span>작성자: {searchResult.nickname}</span>
+                          </div>
+                          <div className={styles.postinfo}>
+                              <span>게시일: {searchResult.p_date} 추천: {searchResult.recommend}</span>
+                          </div>
+                      </div>
                     </Link>
                 ))}
             </div>
@@ -68,8 +74,8 @@ export default function SearchResultPage() {
                 </li>
                 ))}
             </ul>
-        </div>
         <Search></Search>
+        </div>
     </div>
 );
 }

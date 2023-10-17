@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, Outlet } from 'react-router-dom';
-import Header from '../../component/header/Header';
 import styles from './AdminPageLayout.module.css'
+import AdminHeader from '../../component/header/AdminHeader';
 
 export default function AdminPageLayout() {
 
-    const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedItem, setSelectedItem] = useState('/admin');
 
     const navigate = useNavigate();
     const handleItemClick = (itemUrl) => {
@@ -15,26 +15,26 @@ export default function AdminPageLayout() {
 
     const items = [
         {
-            url:"/admin/customer-service",
+            url:"/admin",
             subject:"고객센터관리"
         },
         {
             url:"/admin/board",
             subject:"게시판관리"
         },
-        {
-            url:"/admin/studygroup",
-            subject:"스터디그룹관리"
-        },
-        {
-            url:"/admin/interview",
-            subject:"가상면접관리"
-        }
+        // {
+        //     url:"/admin/studygroup",
+        //     subject:"스터디그룹관리"
+        // },
+        // {
+        //     url:"/admin/interview",
+        //     subject:"가상면접관리"
+        // }
     ]
 
     return (
         <div>
-            <div className='header'><Header /></div>
+            <div className='header'><AdminHeader /></div>
             <div className='container'>
                 <div className={styles.sideBar}>
                     {items.map((item)=> {
