@@ -58,3 +58,98 @@ img {
 }
 
 
+
+/*여기서 부터 커뮤니티*/
+
+.boardListContainer {
+    width: 90vw;
+    height: 85%;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.boardCard {
+    margin: 0px 10px;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    color: red;
+    border: solid 1px black;
+    border-radius: 3px;
+    width: 100%;
+    height: 200px;
+}
+
+.title {
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    border-bottom: solid 2px gray;
+    padding-bottom: 4px;
+}
+
+.title:hover {
+    color: var(--deep-blue);
+}
+
+.content {
+    font-size: 14px;
+    color: black;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--cloud-white);
+    padding: 10px;
+    border: 1px solid rgba(140, 129, 129, 1);
+    border-radius: 5px;
+    margin: 5px 0;
+    transition: background-color 0.2s ease;
+    
+    
+}
+
+
+.content:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+.content > div{
+    display: flex;
+    justify-content: end;
+    color: #a6a6a6;
+    opacity: 1;
+}
+
+.comunity {
+    width: 100%;
+    display: flex;
+    align-items: start;
+}
+
+.pageName {
+    margin: 20px 0px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.forScroll{
+    max-height: 300px; /* 내용이 이 높이를 넘어가면 스크롤바가 나타납니다. */
+    overflow-y: auto; /* 세로 스크롤바를 활성화합니다. */     /* 글자가 자동으로 줄 바꿈되지 않도록 설정 */
+    overflow-x: hidden;
+  text-overflow: ellipsis; /* 텍스트가 넘칠 경우 "..."으로 대체 */
+      
+}
+
+
+.homeComu {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

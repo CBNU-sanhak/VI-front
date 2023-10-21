@@ -16,17 +16,12 @@ import InterviewResult from './Page/InterviewResult';
 import { LoginModeProvider } from './context/LoginModeContext';
 import Help from './Page/help';
 import AdminPageLayout from './Page/adminPage/AdminPageLayout';
-import AdminMainPage from './Page/adminPage/AdminMainPage';
 import AdminCustomerService from './Page/adminPage/AdminCustomerService';
 import AdminBoard from './Page/adminPage/AdminBoard';
-import AdminStudygroup from './Page/adminPage/AdminStudygroup';
-import AdminInterview from './Page/adminPage/AdminInterview';
 import Interview from './Page/Interview';
 import StudyGroup from './Page/StudyGroup';
 import QAPage from './Page/QAPage';
 import SearchResults from './Page/SearchResultPage';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import UpdateBoard from './Page/UpdateBoardPage';
 import UpdateBoardPage from './Page/UpdateBoardPage';
 import AdminAnswerPage from './Page/adminPage/AdminAnswerPage';
 

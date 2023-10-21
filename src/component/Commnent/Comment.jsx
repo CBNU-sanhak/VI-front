@@ -15,7 +15,7 @@ export default function Comment( {item , onDelete}) {
     return (
         <div className={styles.commentBox}>
             <div className={styles.commentBox_head}>
-                <div>작성자:{ writer}| </div>
+                <div>작성자:{ item.nickname}| </div>
                 <div className={styles.date}>{c_date}</div>
             </div>
             <div className={styles.comment}>

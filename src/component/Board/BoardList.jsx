@@ -49,7 +49,7 @@ export default function BoardList() {
                    
                     <div className={styles.forScroll}>
                         {freeData.map((item) => 
-                            (<Link to={`/board/${item.id}`}>
+                            (<Link key={item.id} to={`/board/${item.id}`}>
                                 <div  key={item.id} className={styles.content}>
                                     <span>
                                         {item.title} 
@@ -65,7 +65,7 @@ export default function BoardList() {
                     
                     <div className={styles.forScroll}>
                         {interviewData.map((item) => 
-                            (<Link to={`/board/${item.id}`}>
+                            (<Link key={item.id} to={`/board/${item.id}`}>
                                 <div  key={item.id} className={styles.content}>
                                     <span>
                                         {item.title} 
@@ -80,7 +80,7 @@ export default function BoardList() {
                     <Link to="/board/job"><div className={styles.title}>취업게시판</div></Link>
                     <div className={styles.forScroll}>
                         {jobData.map((item) => 
-                            (<Link to={`/board/${item.id}`}>
+                            (<Link key={item.id} to={`/board/${item.id}`}>
                                 <div  key={item.id} className={styles.content}>
                                     <span>
                                         {item.title} 
